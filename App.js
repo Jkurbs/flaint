@@ -37,20 +37,19 @@ const featuresData = [
   {
     title: "Add to your gallery",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "Add any type of paintings to your gallery walls in a personalized, appealing, fast and reliable way.",
     image: require("./assets/feature-2.png"),
   },
   {
     title: "Customize your gallery",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      "Customize your gallery in a way that's personal to you but appealing to your target audience.",
     image: require("./assets/feature-1.png"),
   },
 
   {
-    title: "Share with people",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+    title: "Share with the outside world",
+    description: "Easily share with the world with the click of a button.",
     image: require("./assets/feature-3.png"),
   },
 ];
@@ -135,14 +134,9 @@ export default function App() {
                 : "The Most advanced\npainting gallery."}
             </Text>
             <Text style={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do{" "}
-              {"\n"}
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad {"\n"}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do{" "}
-              {"\n"}
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad {"\n"}
+              Flaint is developing a way to allow painters who value their work
+              to create an appealing virtual art gallery that drives more sales
+              and exposure.
             </Text>
             <TouchableOpacity
               onPress={() => openApplyLink()}
@@ -182,7 +176,11 @@ export default function App() {
             >
               <Text style={styles.featureTitle}>{item.title}</Text>
               <Text style={styles.featureDescription}>{item.description}</Text>
-              <Image style={styles.featureImage} source={item.image} />
+              <Image
+                resizeMethod={"cover"}
+                style={styles.featureImage}
+                source={item.image}
+              />
             </View>
           )}
         />
@@ -230,9 +228,9 @@ const styles = StyleSheet.create({
   },
 
   content: {
-    // width: "50%",
     padding: 20,
     paddingTop: 60,
+    width: "50%",
   },
 
   title: {
@@ -244,6 +242,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     fontSize: 17,
     color: "#586069",
+    textAlign: getPixelRatio() ? "left" : "center",
   },
 
   accessButton: {
@@ -279,7 +278,7 @@ const styles = StyleSheet.create({
 
   featureTitle: {
     fontWeight: "600",
-    fontSize: 30,
+    fontSize: 25,
   },
 
   featureDescription: {
@@ -290,6 +289,7 @@ const styles = StyleSheet.create({
 
   featureImage: {
     marginTop: 30,
+    marginBottom: 30,
     width: "40%",
     height: "40%",
     alignSelf: "center",
